@@ -1,0 +1,174 @@
+﻿<%- include('partials/header') %>
+<div class="form-container">
+    <% if(locals.error) { %>
+        <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+    <% if(locals.success) { %>
+        <div class="alert alert-success"><%= success %></div>
+    <% } %>
+    <form method="post">
+
+<div class="login-form">
+    <div class="front-face">
+        <span class="text">LOGIN</span>
+        <span class="loader"></span>
+    </div>
+        <form>
+        <div class="form-group">
+            <label for="username">-- Who Are You?</label>
+            <input type="text" name="username" id="username" value="<%= locals.username || '' %>" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="password">-- Your Password</label>
+            <input type="password" name="password" id="password" class="form-control" />
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Get Me In</button>
+            <a href="/register" class="btn btn-link">I Do Not Know Who Am I</a>
+        </div>
+
+        </form>
+
+</div>
+       
+    </form>
+</div>
+<%- include('partials/footer') %>
+
+
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    background:#FFF;
+}
+
+.login-form{
+position:absolute;
+width: 350px;
+height: 350px;
+left:50%;
+top:50%;
+background: #fff;
+transform: translateX(-50%) translateY(-50%);
+border-radius: 5px;
+padding:20px;
+box-sizing: border-box;
+overflow: hidden;
+}
+
+
+
+.front-face{
+position:absolute;
+left:0  ;
+top:0;
+width: 100%;
+height: 100%;
+background:#3b5998;
+display: block;
+transition : width 0.2s ease-in-out;
+z-index:2;
+}
+
+
+.login-form:hover .front-face, login-form.focused>.front-face{
+width: 30px;
+}
+
+
+
+.login-form:hover .front-face>.text, .login-form.focused>.front-face>.text{
+font-size : 1rem;
+transform: rotate(-90deg);
+}
+
+
+
+
+.front-face>.text{
+font-size: 5rem;
+font-family: sans-serif,Arial;
+color: #fff;
+text-align:center;
+display: block;
+line-height: 300px;
+transition: all 0.2s ease-in-out;
+}
+
+
+.login-form>form{
+width:200px;
+margin:0 auto;
+}
+
+.login-form>form>.input{
+width: 100 %;
+height: 50px;
+outline: none;
+border:0px;
+font-size: 20px;
+font-family:sans-serif,Arial;
+border-bottom: 2px solid #3b5998;
+color:#3b5998;
+
+}
+
+
+
+.btn btn-link:after{
+content:"";
+position: absolute;
+width:0;
+height:0;
+border-left: 30px solid transparent;
+border-right: 30px solid #fff;
+border-bottom:30px solid transparent;
+left:-15px;
+transform:rotate(45deg);
+top:5px;
+transition: all 0.2s ease-in-out;
+}
+
+.btn btn-link:hover, .btn btn-link:focus, .btn btn-link:active{
+border: 5px solid #3b5998;
+background: #fff;
+}
+.btn btn-link:hover:after, .btn btn-link:focus:after, .btn btn-link:active:after{
+border-right: 30px solid #3b5998;
+}
+
+.front-face>.loader{
+display:none;
+position: absolute;
+width:150px;
+height: 150px;
+border: 2px solid #fff;
+border-radius: 50%;
+margin: 75px 75px;
+animation:loading 2s linear infinite;
+}
+.front-face>.loader:after{
+content:"";
+position:absolute;
+left:65px;
+top:-10px;
+width:20px;
+height:20px;
+background:#fff;
+border-radius:50%
+
+}
+
+@keyframes loading{
+    50%{
+    opacity:0.5;
+    }
+    100%{
+    transform: rotate(360deg);
+    }
+}
+
+
+

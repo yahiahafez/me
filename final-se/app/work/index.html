@@ -1,0 +1,18 @@
+﻿<h1>My Works</h1>
+<div id="works" class="row" style="margin-top: 20px;">
+{{vm.works}}
+    <div class="col-sm-4" ng-repeat="vm.work in vm.works">
+        <ul >
+            <li>
+            {{vm.works}}
+             <label>{{ vm.work.workName }}</label>
+             <ul>
+                 <li><label>Link: </label> {{vm.work.url}}</li>
+                 <li><label>Repo URL: </label> {{vm.work.repo}}</li>
+                 <li><label>Screenshot: </label> {{vm.work.screenshot}}</li>
+             </ul>
+            </li>
+        </ul>
+
+    </div>
+</div>

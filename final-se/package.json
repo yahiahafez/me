@@ -1,0 +1,21 @@
+{
+    "name": "mini-project",
+    "version": "1.0.0",
+    "description": "Mini Project",
+    "dependencies": {
+        "bcryptjs": "^2.1.0",
+        "body-parser": "^1.13.2",
+        "ejs": "^2.3.3",
+        "express": "^4.13.0",
+        "express-jwt": "^5.1.0",
+        "express-session": "^1.11.3",
+        "jsonwebtoken": "^7.3.0",
+        "lodash": "^4.17.4",
+        "mongodb": "^2.1.16",
+        "mongoskin": "^2.1.0",
+        "q": "^1.4.1",
+        "request": "^2.58.0",
+        "rootpath": "^0.1.2"
+    },
+    "license": "MIT"
+}

@@ -1,0 +1,24 @@
+﻿<h1>Add work</h1>
+<div class="form-container">
+    <form method="post">
+        <div class="form-group">
+            <label for="workName">Work name</label>
+            <input type="text" id="workName" class="form-control" ng-model="vm.work.workName" required />
+        </div>
+        <div class="form-group">
+            <label for="url">URL</label>
+            <input type="text" id="url" class="form-control" ng-model="vm.work.url" />
+        </div>
+        <div class="form-group">
+            <label for="repo">Repo URL</label>
+            <input type="text" id="repo" class="form-control" ng-model="vm.work.repo" />
+        </div>
+        <div class="form-group">
+            <label for="screenshot">Screenshot</label>
+            <input type="file" id="screenshot" class="form-control" ng-model="vm.work.screenshot" />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" ng-click="vm.saveWork()">Save</button>
+        </div>
+    </form>
+</div>

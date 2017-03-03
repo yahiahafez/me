@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+<div class="container">
+    <h2>All Works</h2>
+    <div id="works" class="row" style="margin-top: 20px;">
+    <div class="col-sm-4">
+    <ul >
+    <% for(var i=0; i < students.length; i++) { %>
+            <li>
+                <%= students[i].firstName %><%= students[i].lastName %>
+                <% if (students[i].works) { %>
+                <ul>
+                    <% for(var k=0; k < students[i].works.length; k++) { %>
+                    <li>
+                        <label><%= students[i].works[k].workName %></label>
+                        <ul>
+                             <li><label>Link: </label> <%= students[i].works[k].url %></li>
+                             <li><label>Repo URL: </label> <%= students[i].works[k].repo %></li>
+                             <li><label>Screenshot: </label> <%= students[i].works[k].screenshot %></li>
+                        </ul>
+                    </li>
+                    <% } %>
+                </ul>
+                <% } %>
+            </li>
+        <% } %>
+</ul>
+
+    </div>
+</div>
+</div>
+<%- include('partials/footer') %>
